@@ -11,7 +11,10 @@ app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-
+app.get('/', (req, res) => {
+    res.send("hello world from backend");
+    
+});
 // POST endpoint for translation
 app.post('/translate', async (req, res) => {
     try {
