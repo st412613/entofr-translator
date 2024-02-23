@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { translate } = require('free-translate');
 const cors = require('cors'); // Import cors middleware
 
-const app = express.Router();
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware to enable CORS
