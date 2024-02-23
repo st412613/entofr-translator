@@ -2,9 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { translate } = require('free-translate');
 const cors = require('cors'); // Import cors middleware
+async function translateText() {
+    try {
+        const translatedText = await translate('Hello', { from: 'en', to: 'fr' });
+        console.log('Translated text:', translatedText);
+    } catch (error) {
+        console.error('Error during translation:', error);
+    }
+}
 
+translateText();
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 
 // Middleware to enable CORS
 app.use(cors());
